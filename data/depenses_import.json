@@ -1,0 +1,6 @@
+[
+  { "name": "Nourriture", "description": "Tout ce qui est nourriture" },
+  { "name": "Loyer", "description": "Loyer ou charges" },
+  { "name": "Transport", "description": "Bus, métro, essence..." },
+  { "name": "Loisirs", "description": "Sorties, jeux, cinéma..." }
+]

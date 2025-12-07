@@ -1,0 +1,33 @@
+{
+  "resumeGlobal": {
+    "totalDepense": 480,
+    "nombreAchats": 7
+  },
+  "depensesParCategorie": [
+    {
+      "categorie": "Nourriture",
+      "total": 150,
+      "nombreAchats": 3
+    },
+    {
+      "categorie": "Loyer",
+      "total": 250,
+      "nombreAchats": 1
+    },
+    {
+      "categorie": "Loisirs",
+      "total": 80,
+      "nombreAchats": 3
+    }
+  ],
+  "depensesParUtilisateur": [
+    {
+      "user": "Alice",
+      "total": 200
+    },
+    {
+      "user": "Bob",
+      "total": 280
+    }
+  ]
+}
