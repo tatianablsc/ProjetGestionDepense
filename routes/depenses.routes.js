@@ -1,7 +1,7 @@
 
 import express from "express";
 import mongoose from "mongoose";
-import Depense from "../models/Depense.js";
+import Depense from "../models/depense.js";
 
 const router = express.Router();
 
