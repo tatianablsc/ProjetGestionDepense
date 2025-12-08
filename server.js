@@ -20,6 +20,19 @@ app.use(express.json());
 // On se connecte à MongoDB
 connectDB();
 
+// Route de test pour vérifier que l'API fonctionne
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'API Gestion de Dépenses',
+    status: 'En ligne ✅',
+    routes: {
+      users: '/api/users',
+      depenses: '/api/depenses',
+      achats: '/api/achats'
+    }
+  });
+});
+
 // Routes de l'API
 
 // Routes pour les utilisateurs
