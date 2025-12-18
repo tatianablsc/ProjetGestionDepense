@@ -177,7 +177,6 @@ GET //localhost:5000/api/users/stats/salary
 ```
 #### 2. Créer un user (POST) Tatiana
 ```
-NB : Vérifie que le salaire est positif et les champs présents.
 
 POST //localhost:5000/api/users/
 
@@ -204,6 +203,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
