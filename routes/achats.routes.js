@@ -156,7 +156,6 @@ router.get("/stats/by-category", async (req, res, next) => {
 import fs from "fs";
 import path from "path";
 
-// totalement optionnel mais :
  // route sert à exporter des stats dans un fichier JSON
 router.get("/export", async (req, res, next) => {
   try {
