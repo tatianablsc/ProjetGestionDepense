@@ -193,9 +193,9 @@ POST //localhost:5000/api/depenses/
 }
 ```
 
-#### 3. Stats d'utilisation des catégories (GET) Tatiana
+#### 3. Récupérer les stats globales par catégories de dépense (GET) Tatiana
 ```
-Calcule le montant total dépensé et le nombre d'achats pour chaque catégorie.
+http://localhost:5000/stats/by-category
 
 GET //localhost:5000/api/depenses/stats/usage
 ```
@@ -230,6 +230,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
