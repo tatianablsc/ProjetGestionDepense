@@ -63,6 +63,7 @@ router.get("/search", async (req, res, next) => {
   }
 });
 
+//pipeline stats d'utilisation des categories
 router.get("/stats/usage", async (req, res, next) => {
   try {
     const stats = await Achat.aggregate([
