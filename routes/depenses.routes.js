@@ -3,6 +3,8 @@ import express from "express";
 import mongoose from "mongoose";
 import Depense from "../models/Depense.js";
 import Achat from "../models/Achat.js";
+import fs from "fs";
+import path from "path";
 
 const router = express.Router();
 
@@ -152,6 +154,26 @@ router.get("/stats/usage", async (req, res, next) => {
 
     res.json(stats);
 
+  } catch (err) {
+    next(err);
+  }
+});
+
+// route pour importer des catégories
+router.post("/import", async (req, res, next) => {
+  try {
+    const filePath = path.join("data", "depenses_import.json");
+
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ message: "Fichier data/depenses_impot.json introuvable" });
+    }
+
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const depensesArray = JSON.parse(fileContent);
+
+    await Depense.insertMany(depensesArray);
+
+    res.json({ message: "Catégories importées avec succès" });
   } catch (err) {
     next(err);
   }
