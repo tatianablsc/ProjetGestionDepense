@@ -168,7 +168,13 @@ POST //localhost:5000/api/depenses/
   "description": "valeur2" (optionnel)
 }
 ```
+#### 2. Exporter les statistiques globales en JSON (GET) Tatiana
+```
+Calcule le total et l'écrit dans le fichier "data/stats_export.json" sur le serveur.
 
+GET //localhost:5000/api/achats/export
+
+```
 ### [Collection user]
 
 #### 1. Récupérer tous les users avec leurs statistiques salaire moyen... (GET) Philippe
@@ -203,6 +209,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
