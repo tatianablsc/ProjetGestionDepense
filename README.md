@@ -172,6 +172,12 @@ POST //localhost:5000/api/achats/
 ```
 GET //localhost:5000/api/achats/stats
 ```
+#### 4. Exporter les statistiques globales en JSON (GET) Tatiana
+```
+Calcule le total et l'écrit dans le fichier "data/stats_export.json" sur le serveur.
+
+GET //localhost:5000/api/achats/export
+```
 
 ---
 
@@ -187,12 +193,6 @@ POST //localhost:5000/api/depenses/
 }
 ```
 
-#### 2. Exporter les statistiques globales en JSON (GET) Tatiana
-```
-Calcule le total et l'écrit dans le fichier "data/stats_export.json" sur le serveur.
-
-GET //localhost:5000/api/achats/export
-```
 #### 3. Stats d'utilisation des catégories (GET) Tatiana
 ```
 Calcule le montant total dépensé et le nombre d'achats pour chaque catégorie.
@@ -230,6 +230,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
