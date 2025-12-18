@@ -1,13 +1,13 @@
-import express from "express";
-import mongoose from "mongoose";
-import Depense from "../models/Depense.js";
-import Achat from "../models/Achat.js";
+
 import fs from "fs";
 import path from "path";
+import express from "express";
+import mongoose from "mongoose";
+import Depense from "../models/depense.js";
 
 const router = express.Router();
 
- // route sert à créer une nouvelle catégorie de dépense
+ // route sert à créer une nouvelle catégorie de dépense                                                                                                                    Philippe
 router.post("/", async (req, res, next) => {
   try {
     // On récupère ce qui est envoyé
@@ -59,6 +59,68 @@ router.get("/search", async (req, res, next) => {
     res.json(depenses);
   } catch (err) {
     next(err);
+  }
+});
+
+// Route pour IMPORTER des catégories de dépenses depuis un fichier JSON
+router.post("/import", async (req, res, next) => {
+  try {
+    // 1. Définir le chemin vers le fichier JSON
+    const filePath = path.join(process.cwd(), "data", "depenses_import.json");
+    
+    // 2. Vérifier que le fichier existe
+    if (!fs.existsSync(filePath)) {
+      const error = new Error("Le fichier depenses_import.json n'existe pas dans le dossier data/");
+      error.statusCode = 404;
+      throw error;
+    }
+    
+    // 3. Lire le contenu du fichier
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    
+    // 4. Parser le JSON
+    let depenses;
+    try {
+      depenses = JSON.parse(fileContent);
+    } catch (parseError) {
+      const error = new Error("Le fichier JSON est invalide ou mal formaté");
+      error.statusCode = 400;
+      throw error;
+    }
+    
+    // 5. Vérifier que c'est un tableau
+    if (!Array.isArray(depenses)) {
+      const error = new Error("Le fichier JSON doit contenir un tableau");
+      error.statusCode = 400;
+      throw error;
+    }
+    
+    // 6. Vérifier que le tableau n'est pas vide
+    if (depenses.length === 0) {
+      const error = new Error("Le fichier JSON ne contient aucune donnée");
+      error.statusCode = 400;
+      throw error;
+    }
+    
+    // 7. Insérer toutes les dépenses dans MongoDB
+    const result = await Depense.insertMany(depenses);
+    
+    // 8. Renvoyer la réponse de succès
+    res.status(201).json({
+      success: true,
+      message: `${result.length} catégorie(s) importée(s) avec succès`,
+      count: result.length,
+      data: result
+    });
+    
+  } catch (error) {
+    // Si c'est une erreur MongoDB (ex: doublon)
+    if (error.code === 11000) {
+      error.message = "Certaines catégories existent déjà dans la base";
+      error.statusCode = 400;
+    }
+    
+    next(error);
   }
 });
 
@@ -116,63 +178,6 @@ router.delete("/:id", async (req, res, next) => {
 
     res.json({ message: "Catégorie supprimée" });
 
-  } catch (err) {
-    next(err);
-  }
-});
-
-router.get("/stats/usage", async (req, res, next) => {
-  try {
-    const stats = await Achat.aggregate([
-      {
-        $group: {
-          _id: "$depense",
-          totalAmount: { $sum: "$amount" },
-          countAchats: { $sum: 1 }
-        }
-      },
-      {
-        $lookup: {
-          from: "depenses",       
-          localField: "_id",
-          foreignField: "_id",
-          as: "depenseInfo"
-        }
-      },
-      { $unwind: "$depenseInfo" },
-      {
-        $project: {
-          _id: 0,
-          depenseId: "$depenseInfo._id",
-          depenseName: "$depenseInfo.name",
-          totalAmount: 1,
-          countAchats: 1
-        }
-      }
-    ]);
-
-    res.json(stats);
-
-  } catch (err) {
-    next(err);
-  }
-});
-
-// route pour importer des catégories
-router.post("/import", async (req, res, next) => {
-  try {
-    const filePath = path.join("data", "depenses_import.json");
-
-    if (!fs.existsSync(filePath)) {
-      return res.status(404).json({ message: "Fichier data/depenses_import.json introuvable" });
-    }
-
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const depensesArray = JSON.parse(fileContent);
-
-    await Depense.insertMany(depensesArray);
-
-    res.json({ message: "Catégories importées avec succès" });
   } catch (err) {
     next(err);
   }
