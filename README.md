@@ -232,19 +232,6 @@ DELETE /api/[ressource]/:id
 
 ---
 
-## Améliorations Possibles
-
-- [ ] Authentification JWT
-- [ ] Upload de fichiers (images, documents)
-- [ ] Système de notifications
-- [ ] Cache avec Redis
-- [ ] Tests unitaires et d'intégration
-- [ ] Documentation Swagger/OpenAPI
-- [ ] Déploiement sur le cloud
-- [ ] [Autre amélioration spécifique à votre projet]
-
----
-
 ## Auteurs
 
 - **[Membre 1]** - Philippe Peng
@@ -272,4 +259,5 @@ DELETE /api/[ressource]/:id
 
 **Date de réalisation:** Décembre - 2025
 **Formation:** Skills4Mind - M.TAALBI RABAH
+
 **Projet:** Gestion dépenses
