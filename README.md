@@ -210,14 +210,14 @@ POST //localhost:5000/api/achats/
 
 ### [Collection dépense] (Categorie)
 
-####Lister toutes les catégories (GET) Kevin
+#### Lister toutes les catégories (GET) Kevin
 ```
 GET //localhost:5000/api/depenses/
 ```
 
 ### Statistiques Globales
 
-####Récupérer les stats globales des achats (GET) Kevin
+#### Récupérer les stats globales des achats (GET) Kevin
 ```
 GET //localhost:5000/api/achats/stats
 ```
@@ -237,6 +237,7 @@ GET //localhost:5000/api/achats/stats
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
