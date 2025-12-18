@@ -170,7 +170,7 @@ POST //localhost:5000/api/achats/
 
 #### 3. Récupérer les stats globales des achats (GET) Kevin
 ```
-GET //localhost:5000/api/achats/stats
+GET //localhost:5000/api/achats/stats/total
 ```
 #### 4. Exporter les statistiques globales en JSON (GET) Tatiana
 ```
@@ -230,6 +230,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
