@@ -150,7 +150,7 @@ http://localhost:5000/api
 
 ### [Collection achat]
 
-#### 1. Récupérer tous les [achats] avec d'un user par objectid (GET)
+#### 1. Récupérer tous les [achats] avec d'un user par objectid (GET) Philippe
 ```
 GET //localhost:5000/api/achats/filter?user=69374a2ddef7e4f5b7ec6927
 ```
@@ -171,7 +171,7 @@ POST //localhost:5000/api/depenses/
 
 ### [Collection user]
 
-#### 1. Récupérer tous les [users] avec leurs statistiques salaire moyen... (GET)
+#### 1. Récupérer tous les [users] avec leurs statistiques salaire moyen... (GET) Philippe
 ```
 GET //localhost:5000/api/users/stats/salary
 ```
@@ -191,3 +191,4 @@ GET //localhost:5000/api/users/stats/salary
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
