@@ -1,5 +1,3 @@
-// routes/users.routes.js
-
 import express from "express";
 import validator from "validator";
 import User from "../models/User.js";
