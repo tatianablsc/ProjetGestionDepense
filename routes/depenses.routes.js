@@ -4,6 +4,7 @@ import path from "path";
 import express from "express";
 import mongoose from "mongoose";
 import Depense from "../models/depense.js";
+import Achat from "../models/achat.js";
 
 const router = express.Router();
 
@@ -57,6 +58,43 @@ router.get("/search", async (req, res, next) => {
 
     const depenses = await Depense.find(filter);
     res.json(depenses);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/stats/usage", async (req, res, next) => {
+  try {
+    const stats = await Achat.aggregate([
+      {
+        $group: {
+          _id: "$depense",
+          totalAmount: { $sum: "$amount" },
+          countAchats: { $sum: 1 }
+        }
+      },
+      {
+        $lookup: {
+          from: "depenses",       
+          localField: "_id",
+          foreignField: "_id",
+          as: "depenseInfo"
+        }
+      },
+      { $unwind: "$depenseInfo" },
+      {
+        $project: {
+          _id: 0,
+          depenseId: "$depenseInfo._id",
+          depenseName: "$depenseInfo.name",
+          totalAmount: 1,
+          countAchats: 1
+        }
+      }
+    ]);
+
+    res.json(stats);
+
   } catch (err) {
     next(err);
   }
@@ -184,3 +222,4 @@ router.delete("/:id", async (req, res, next) => {
 });
 
 export default router;
+
