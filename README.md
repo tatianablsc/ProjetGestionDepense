@@ -168,7 +168,7 @@ POST //localhost:5000/api/achats/
 }
 ```
 
-#### Récupérer les stats globales des achats (GET) Kevin
+#### 3. Récupérer les stats globales des achats (GET) Kevin
 ```
 GET //localhost:5000/api/achats/stats
 ```
@@ -193,7 +193,13 @@ Calcule le total et l'écrit dans le fichier "data/stats_export.json" sur le ser
 
 GET //localhost:5000/api/achats/export
 ```
-#### Lister toutes les catégories (GET) Kevin
+#### 3. Stats d'utilisation des catégories (GET) Tatiana
+```
+Calcule le montant total dépensé et le nombre d'achats pour chaque catégorie.
+
+GET //localhost:5000/api/depenses/stats/usage
+```
+#### 4. Lister toutes les catégories (GET) Kevin
 ```
 GET //localhost:5000/api/depenses/
 ```
@@ -231,6 +237,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
