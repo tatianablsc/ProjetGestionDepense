@@ -178,7 +178,12 @@ Calcule le total et l'écrit dans le fichier "data/stats_export.json" sur le ser
 
 GET //localhost:5000/api/achats/export
 ```
+#### 3. Récupérer les stats globales par catégories de dépense (GET) Tatiana
+```
+http://localhost:5000/stats/by-category
 
+GET //localhost:5000/api/depenses/stats/usage
+```
 ---
 
 ### [Collection dépense] (Categorie)
@@ -191,15 +196,9 @@ POST //localhost:5000/api/depenses/
   "name": "valeur1",
   "description": "valeur2" (optionnel)
 }
-```
 
-#### 3. Récupérer les stats globales par catégories de dépense (GET) Tatiana
 ```
-http://localhost:5000/stats/by-category
-
-GET //localhost:5000/api/depenses/stats/usage
-```
-#### 4. Lister toutes les catégories (GET) Kevin
+#### 2. Lister toutes les catégories (GET) Kevin
 ```
 GET //localhost:5000/api/depenses/
 ```
@@ -230,6 +229,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
