@@ -213,13 +213,6 @@ GET //localhost:5000/api/users/stats/salary
 #### 2. Créer un user (POST) Tatiana
 ```
 POST //localhost:5000/api/users/
-
-{
-  "firstName": "x",
-  "lastName": "y",
-  "salary": 100,
-  "job": "z"
-}
 ```
 
 ---
@@ -237,6 +230,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
