@@ -178,44 +178,16 @@ GET //localhost:5000/api/users/stats/salary
 
 ---
 
-## Améliorations Possibles
-
-- [ ] Authentification JWT
-- [ ] Upload de fichiers (images, documents)
-- [ ] Système de notifications
-- [ ] Cache avec Redis
-- [ ] Tests unitaires et d'intégration
-- [ ] Documentation Swagger/OpenAPI
-- [ ] Déploiement sur le cloud
-- [ ] [Autre amélioration spécifique à votre projet]
-
----
-
 ## Auteurs
 
 - **[Membre 1]** - Philippe Peng
-**Routes développées:**
-1. [Route 1] - [Description]
-2. [Route 2] - [Description]
-3. [Route 3 avec agrégation] - [Description]
 - **[Membre 2]** - Tatiana Blisac
-**Routes développées:**
-1. [Route 1] - [Description]
-2. [Route 2] - [Description]
-3. [Route 3 avec agrégation] - [Description]
 - **[Membre 3]** - Kévin Nguyen
-**Routes développées:**
-1. [Route 1] - [Description]
-2. [Route 2] - [Description]
-3. [Route 3 avec agrégation] - [Description]
 - **[Membre 4]** - Rémi Paillaud-Iwabuchi
-**Routes développées:**
-1. [Route 1] - [Description]
-2. [Route 2] - [Description]
-3. [Route 3 avec agrégation] - [Description]
 
 ---
 
 **Date de réalisation:** Décembre - 2025
 **Formation:** Skills4Mind - M.TAALBI RABAH
+
 **Projet:** Gestion dépenses
