@@ -192,6 +192,36 @@ POST //localhost:5000/api/users/
 }
 ```
 
+
+### [Collection achat]
+
+#### 1. Créer un achat (POST) Kevin
+```
+POST //localhost:5000/api/achats/
+
+{
+  "user": "<USER_OBJECT_ID>",
+  "depense": "<DEPENSE_OBJECT_ID>",
+  "amount": 50,
+  "date": "2025-12-18",
+  "description": "Texte descriptif"
+}
+```
+
+### [Collection dépense] (Categorie)
+
+####Lister toutes les catégories (GET) Kevin
+```
+GET //localhost:5000/api/depenses/
+```
+
+### Statistiques Globales
+
+####Récupérer les stats globales des achats (GET) Kevin
+```
+GET //localhost:5000/api/achats/stats
+```
+
 ---
 
 ## Auteurs
@@ -207,6 +237,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
