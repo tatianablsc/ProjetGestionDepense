@@ -164,7 +164,7 @@ router.post("/import", async (req, res, next) => {
     const filePath = path.join("data", "depenses_import.json");
 
     if (!fs.existsSync(filePath)) {
-      return res.status(404).json({ message: "Fichier data/depenses_impot.json introuvable" });
+      return res.status(404).json({ message: "Fichier data/depenses_import.json introuvable" });
     }
 
     const fileContent = fs.readFileSync(filePath, "utf-8");
