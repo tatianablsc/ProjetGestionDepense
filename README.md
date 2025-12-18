@@ -173,7 +173,6 @@ POST //localhost:5000/api/depenses/
 Calcule le total et l'écrit dans le fichier "data/stats_export.json" sur le serveur.
 
 GET //localhost:5000/api/achats/export
-
 ```
 ### [Collection user]
 
@@ -183,7 +182,6 @@ GET //localhost:5000/api/users/stats/salary
 ```
 #### 2. Créer un user (POST) Tatiana
 ```
-
 POST //localhost:5000/api/users/
 
 {
@@ -209,6 +207,7 @@ POST //localhost:5000/api/users/
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
