@@ -24,7 +24,7 @@ connectDB();
 app.get('/', (req, res) => {
   res.json({ 
     message: 'API Gestion de Dépenses',
-    status: 'En ligne ✅',
+    status: 'En ligne',
     routes: {
       users: '/api/users',
       depenses: '/api/depenses',
