@@ -155,6 +155,24 @@ http://localhost:5000/api
 GET //localhost:5000/api/achats/filter?user=69374a2ddef7e4f5b7ec6927
 ```
 
+#### 2. Créer un achat (POST) Kevin
+```
+POST //localhost:5000/api/achats/
+
+{
+  "user": "<USER_OBJECT_ID>",
+  "depense": "<DEPENSE_OBJECT_ID>",
+  "amount": 50,
+  "date": "2025-12-18",
+  "description": "Texte descriptif"
+}
+```
+
+#### Récupérer les stats globales des achats (GET) Kevin
+```
+GET //localhost:5000/api/achats/stats
+```
+
 ---
 
 ### [Collection dépense] (Categorie)
@@ -168,12 +186,18 @@ POST //localhost:5000/api/depenses/
   "description": "valeur2" (optionnel)
 }
 ```
+
 #### 2. Exporter les statistiques globales en JSON (GET) Tatiana
 ```
 Calcule le total et l'écrit dans le fichier "data/stats_export.json" sur le serveur.
 
 GET //localhost:5000/api/achats/export
 ```
+#### Lister toutes les catégories (GET) Kevin
+```
+GET //localhost:5000/api/depenses/
+```
+
 ### [Collection user]
 
 #### 1. Récupérer tous les users avec leurs statistiques salaire moyen... (GET) Philippe
@@ -192,36 +216,6 @@ POST //localhost:5000/api/users/
 }
 ```
 
-
-### [Collection achat]
-
-#### 1. Créer un achat (POST) Kevin
-```
-POST //localhost:5000/api/achats/
-
-{
-  "user": "<USER_OBJECT_ID>",
-  "depense": "<DEPENSE_OBJECT_ID>",
-  "amount": 50,
-  "date": "2025-12-18",
-  "description": "Texte descriptif"
-}
-```
-
-### [Collection dépense] (Categorie)
-
-#### Lister toutes les catégories (GET) Kevin
-```
-GET //localhost:5000/api/depenses/
-```
-
-### Statistiques Globales
-
-#### Récupérer les stats globales des achats (GET) Kevin
-```
-GET //localhost:5000/api/achats/stats
-```
-
 ---
 
 ## Auteurs
@@ -237,6 +231,7 @@ GET //localhost:5000/api/achats/stats
 **Formation:** Skills4Mind - M.TAALBI RABAH
 
 **Projet:** Gestion dépenses
+
 
 
 
